@@ -1,0 +1,435 @@
+/* ══════════════════════════════════════════════
+   Contact.css — WhatsApp AI Bot Integration
+   Warm Cream × Forest Green × Gold palette
+   ══════════════════════════════════════════════ */
+
+/* ── Section shell ── */
+.contact {
+  padding: 110px 0 100px;
+  background: #fdfaf0;
+  position: relative;
+  overflow: hidden;
+}
+.contact::before {
+  /* Subtle radial glow top-right */
+  content: "";
+  position: absolute;
+  top: -160px;
+  right: -160px;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(240, 192, 64, 0.07), transparent 65%);
+  pointer-events: none;
+}
+
+/* ── Section header ── */
+.sec-label {
+  display: inline-block;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #c9a030;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.sec-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #0d2818;
+  margin-bottom: 14px;
+  line-height: 1.15;
+}
+.sec-bar {
+  width: 52px;
+  height: 3px;
+  background: linear-gradient(90deg, #1a4d2e, #f0c040);
+  border-radius: 2px;
+  margin-bottom: 44px;
+}
+
+/* ══════════════════════════════════════════════
+   Quick-reply WhatsApp chips
+   ══════════════════════════════════════════════ */
+.wa-chips-section {
+  margin-bottom: 52px;
+  padding: 28px 32px;
+  background: #fff;
+  border-radius: 18px;
+  border: 1px solid rgba(26, 77, 46, 0.1);
+  box-shadow: 0 4px 24px rgba(26, 77, 46, 0.06);
+}
+
+.wa-chips-label {
+  font-size: 0.88rem;
+  color: #4a6a50;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+.wa-chips-label strong {
+  color: #1a4d2e;
+}
+
+.wa-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.wa-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 18px;
+  background: #f5f8f5;
+  border: 1.5px solid rgba(26, 77, 46, 0.18);
+  border-radius: 50px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #1a4d2e;
+  cursor: pointer;
+  transition: background 0.22s, border-color 0.22s, transform 0.22s, box-shadow 0.22s;
+  white-space: nowrap;
+}
+.wa-chip:hover,
+.wa-chip--hover {
+  background: #1a4d2e;
+  border-color: #1a4d2e;
+  color: #f0c040;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(26, 77, 46, 0.22);
+}
+
+/* ══════════════════════════════════════════════
+   Two-column grid
+   ══════════════════════════════════════════════ */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 64px;
+  align-items: start;
+}
+
+/* ── Info column ── */
+.contact-intro {
+  font-size: 0.97rem;
+  color: #4a6a50;
+  line-height: 1.8;
+  font-weight: 300;
+  margin-bottom: 32px;
+  max-width: 420px;
+}
+
+.contact-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 32px;
+}
+
+.contact-info-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(45, 106, 79, 0.1);
+}
+.contact-info-card:last-child {
+  border-bottom: none;
+}
+
+.contact-info-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #1a4d2e, #2d6a4f);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(26, 77, 46, 0.2);
+}
+.contact-info-lbl {
+  font-size: 0.67rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #8aaa90;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+.contact-info-val {
+  font-size: 0.88rem;
+  color: #1a4d2e;
+  font-weight: 500;
+}
+
+/* ── WhatsApp CTA ── */
+.whatsapp-cta-wrap {
+  margin-bottom: 32px;
+}
+
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 26px;
+  background: #25d366;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
+  box-shadow: 0 8px 26px rgba(37, 211, 102, 0.32);
+  width: 100%;
+  justify-content: center;
+  letter-spacing: 0.02em;
+}
+.whatsapp-btn:hover {
+  background: #1ebe5c;
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(37, 211, 102, 0.42);
+}
+.whatsapp-btn-icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.whatsapp-carry-hint {
+  margin-top: 10px;
+  font-size: 0.76rem;
+  color: #6a8a70;
+  line-height: 1.5;
+  padding: 8px 12px;
+  background: rgba(37, 211, 102, 0.07);
+  border-radius: 8px;
+  border-left: 3px solid #25d366;
+}
+
+/* ── Bot explainer ── */
+.bot-explainer {
+  background: #fff;
+  border-radius: 16px;
+  padding: 22px 24px;
+  border: 1px solid rgba(45, 106, 79, 0.12);
+  box-shadow: 0 4px 18px rgba(26, 77, 46, 0.06);
+}
+
+.bot-explainer-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #1a4d2e;
+  margin-bottom: 14px;
+  letter-spacing: 0.02em;
+}
+
+.bot-steps {
+  padding-left: 18px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.bot-steps li {
+  font-size: 0.82rem;
+  color: #4a6a50;
+  line-height: 1.55;
+  font-weight: 300;
+}
+.bot-steps li em {
+  font-style: normal;
+  font-weight: 600;
+  color: #1a4d2e;
+}
+
+/* ══════════════════════════════════════════════
+   Form card
+   ══════════════════════════════════════════════ */
+.contact-form-wrap {
+  background: #1a4d2e;
+  border-radius: 24px;
+  padding: 44px 40px;
+  border: 1px solid rgba(240, 192, 64, 0.14);
+  box-shadow: 0 24px 70px rgba(10, 31, 16, 0.18);
+}
+
+.contact-form-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #f0c040;
+  margin-bottom: 6px;
+}
+.contact-form-sub {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: 28px;
+  line-height: 1.5;
+}
+
+/* ── Form elements ── */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 0;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.38);
+  margin-bottom: 7px;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1.5px solid rgba(240, 192, 64, 0.14);
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.88rem;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: rgba(255, 255, 255, 0.22);
+}
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: #f0c040;
+  box-shadow: 0 0 0 3px rgba(240, 192, 64, 0.1);
+}
+.form-select {
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 7L11 1' stroke='rgba(255,255,255,0.35)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 38px;
+  cursor: pointer;
+}
+.form-select option {
+  background: #1a4d2e;
+  color: #fff;
+}
+.form-textarea {
+  resize: vertical;
+  min-height: 95px;
+  line-height: 1.6;
+}
+
+.form-submit {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #f0c040, #c9a030);
+  color: #0d2818;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: transform 0.25s, box-shadow 0.25s, opacity 0.25s;
+  box-shadow: 0 8px 28px rgba(240, 192, 64, 0.32);
+  margin-top: 4px;
+}
+.form-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 36px rgba(240, 192, 64, 0.46);
+}
+
+.form-footer-note {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.28);
+  margin-top: 12px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* ── Success state ── */
+.form-success {
+  text-align: center;
+  padding: 40px 20px;
+  animation: successIn 0.5s ease both;
+}
+@keyframes successIn {
+  from { opacity: 0; transform: scale(0.94); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.form-success-icon {
+  font-size: 3.2rem;
+  margin-bottom: 16px;
+  animation: bounce 0.6s 0.3s ease both;
+}
+@keyframes bounce {
+  0%   { transform: scale(0.5); opacity: 0; }
+  70%  { transform: scale(1.2); }
+  100% { transform: scale(1);   opacity: 1; }
+}
+.form-success-text {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+.form-success-fallback {
+  display: inline-flex;
+  align-items: center;
+  padding: 11px 22px;
+  background: transparent;
+  border: 1.5px solid rgba(240, 192, 64, 0.4);
+  border-radius: 50px;
+  color: #f0c040;
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  font-family: inherit;
+}
+.form-success-fallback:hover {
+  background: rgba(240, 192, 64, 0.08);
+  transform: translateY(-2px);
+}
+
+/* ══════════════════════════════════════════════
+   Responsive
+   ══════════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+  .contact-intro {
+    max-width: 100%;
+  }
+  .wa-chips-section {
+    padding: 22px 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact { padding: 72px 0 70px; }
+  .contact-form-wrap { padding: 28px 20px; }
+  .form-row { grid-template-columns: 1fr; }
+  .wa-chips { gap: 8px; }
+  .wa-chip { font-size: 0.78rem; padding: 8px 14px; }
+}

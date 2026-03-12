@@ -1,0 +1,273 @@
+/* ═══════════════════════════════════════════════════
+   ZANMADIN — Global Stylesheet (GSAP Enhanced)
+   Revamped color story: deep midnight → emerald → rose gold → ivory
+═══════════════════════════════════════════════════ */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,500&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* ── Brand Core ── */
+  --green:        #1a5c35;
+  --green-deep:   #0f3d23;
+  --green-mid:    #2a7a4a;
+  --green-light:  #eaf5ef;
+  --green-glow:   rgba(26,92,53,0.15);
+
+  --gold:         #c9a227;
+  --gold-bright:  #f0d878;
+  --gold-deep:    #a8841a;
+  --gold-pale:    #fdf8e8;
+  --gold-glow:    rgba(201,162,39,0.25);
+
+  /* ── Section Colors ── */
+  /* Navbar: Deep midnight navy */
+  --nav-bg:           #0a0f1e;
+  --nav-border:       rgba(201,162,39,0.2);
+
+  /* Hero: Rich midnight with emerald pulse */
+  --hero-bg-from:     #050d18;
+  --hero-bg-to:       #0d2318;
+
+  /* Trust Strip: Warm ivory */
+  --trust-bg:         #fdf8ee;
+  --trust-text:       #2a3020;
+
+  /* Services: Pure white with depth */
+  --services-bg:      #f8f5f0;
+
+  /* About: Deep forest */
+  --about-bg-from:    #0c1f0f;
+  --about-bg-to:      #081a2e;
+
+  /* Gallery: Rich charcoal */
+  --gallery-bg:       #111820;
+
+  /* Testimonials: Velvety plum-midnight */
+  --tes-bg-from:      #120820;
+  --tes-bg-to:        #0c1a0f;
+
+  /* CTA: Vibrant emerald */
+  --cta-bg-from:      #0f3d23;
+  --cta-bg-to:        #1a5c35;
+
+  /* Contact: Warm cream */
+  --contact-bg:       #faf6ef;
+
+  /* Footer: Near-black slate */
+  --footer-bg:        #080c12;
+
+  /* ── Neutrals ── */
+  --white:        #ffffff;
+  --bg:           #fafaf8;
+  --border:       #e2e0d8;
+  --border-soft:  rgba(26,92,53,0.12);
+  --text:         #141810;
+  --text-mid:     #435040;
+  --text-light:   #8a9a85;
+
+  /* ── Typography ── */
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body:    'DM Sans', sans-serif;
+
+  /* ── Shadows ── */
+  --shadow-xs:  0 1px 4px rgba(0,0,0,0.06);
+  --shadow-sm:  0 2px 12px rgba(0,0,0,0.07);
+  --shadow-md:  0 6px 28px rgba(0,0,0,0.09);
+  --shadow-lg:  0 16px 56px rgba(0,0,0,0.12);
+  --shadow-xl:  0 28px 80px rgba(0,0,0,0.16);
+
+  /* ── Radii ── */
+  --r-xs: 6px; --r-sm: 10px; --r-md: 16px;
+  --r-lg: 24px; --r-xl: 36px; --r-pill: 999px;
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+button { cursor: pointer; font-family: var(--font-body); }
+a { text-decoration: none; }
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #0a0f1e; }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 4px; }
+
+/* ── Layout helpers ── */
+.container { max-width: 1120px; margin: 0 auto; padding: 0 28px; }
+.section-pad { padding: 96px 0; }
+
+/* ══════════════════════════════════════
+   BUTTON SYSTEM
+══════════════════════════════════════ */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 9px; border: none; border-radius: var(--r-pill);
+  font-family: var(--font-body); font-weight: 600; font-size: 0.9rem;
+  letter-spacing: 0.3px; white-space: nowrap; cursor: pointer;
+  outline: none; user-select: none; position: relative; overflow: hidden;
+  transition: transform 0.28s cubic-bezier(0.34,1.56,0.64,1),
+              box-shadow 0.28s ease, background 0.28s ease, color 0.28s ease;
+}
+.btn:active { transform: scale(0.96) !important; }
+.btn::after {
+  content: ''; position: absolute; top: -60%; left: -80%;
+  width: 50%; height: 220%;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.22), transparent);
+  transform: skewX(-18deg); transition: left 0.55s ease; pointer-events: none;
+}
+.btn:hover::after { left: 150%; }
+
+.btn-sm  { padding: 10px 22px; font-size: 0.82rem; }
+.btn-md  { padding: 13px 30px; }
+.btn-lg  { padding: 16px 40px; font-size: 0.95rem; }
+.btn-xl  { padding: 18px 48px; font-size: 1rem; }
+
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-deep) 100%);
+  color: var(--white);
+  box-shadow: 0 4px 18px var(--gold-glow), inset 0 1px 0 rgba(255,255,255,0.2);
+}
+.btn-gold:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 32px rgba(201,162,39,0.45);
+}
+
+.btn-green {
+  background: linear-gradient(135deg, var(--green) 0%, var(--green-deep) 100%);
+  color: var(--gold-bright);
+  box-shadow: 0 4px 18px var(--green-glow), inset 0 1px 0 rgba(255,255,255,0.1);
+}
+.btn-green:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 32px rgba(26,92,53,0.4);
+  color: #fff;
+}
+
+.btn-ghost-white {
+  background: transparent;
+  color: #fff;
+  border: 1.5px solid rgba(255,255,255,0.4);
+}
+.btn-ghost-white:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.7);
+  transform: translateY(-3px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--green);
+  border: 1.5px solid var(--green);
+}
+.btn-outline:hover {
+  background: var(--green);
+  color: var(--gold-bright);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px var(--green-glow);
+}
+
+.btn-white {
+  background: #fff;
+  color: var(--green);
+  box-shadow: var(--shadow-md);
+}
+.btn-white:hover {
+  background: var(--green);
+  color: var(--gold-bright);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.18);
+}
+
+/* ══════════════════════════════════════
+   SECTION HEADER
+══════════════════════════════════════ */
+.sec-label {
+  display: inline-block;
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 5px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 10px;
+}
+.sec-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 700; color: var(--text); line-height: 1.15;
+}
+.sec-title.light { color: #fff; }
+.sec-title.gold  { color: var(--gold-bright); }
+.sec-sub {
+  color: var(--text-mid); font-size: 0.95rem; line-height: 1.9;
+  max-width: 520px; margin-top: 14px; font-weight: 300;
+}
+.sec-bar {
+  width: 48px; height: 3px; border-radius: 3px; margin-top: 18px;
+  background: linear-gradient(90deg, var(--gold), var(--green));
+}
+.center { text-align: center; }
+.center .sec-sub { margin-left: auto; margin-right: auto; }
+.center .sec-bar { margin-left: auto; margin-right: auto; }
+
+/* ══════════════════════════════════════
+   CARD BASE
+══════════════════════════════════════ */
+.card {
+  background: var(--white); border-radius: var(--r-lg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(26,92,53,0.2);
+}
+
+/* ══════════════════════════════════════
+   ANIMATIONS
+══════════════════════════════════════ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes floatY {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+@keyframes rotateSlow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes sparkle {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50%       { opacity: 1; transform: scale(1.2); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 20px rgba(201,162,39,0.3); }
+  50%       { box-shadow: 0 0 40px rgba(201,162,39,0.6); }
+}
+@keyframes scrollTrack {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.anim-fade-up { animation: fadeUp 0.7s ease both; }
+.d1  { animation-delay: 0.05s; }
+.d2  { animation-delay: 0.15s; }
+.d3  { animation-delay: 0.28s; }
+.d4  { animation-delay: 0.42s; }
+.d5  { animation-delay: 0.58s; }
+.d6  { animation-delay: 0.75s; }
+
+/* GSAP initial hidden state */
+.gsap-hidden {
+  opacity: 0;
+  transform: translateY(40px);
+}

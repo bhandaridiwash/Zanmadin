@@ -1,0 +1,48 @@
+/* TrustStrip.css — Warm Ivory Strip */
+.trust {
+  background: var(--trust-bg);
+  border-top: 1px solid rgba(201,162,39,0.2);
+  border-bottom: 1px solid rgba(201,162,39,0.2);
+  padding: 18px 0;
+  overflow: hidden;
+  position: relative;
+}
+.trust::before,
+.trust::after {
+  content: '';
+  position: absolute; top: 0; bottom: 0; width: 100px; z-index: 2;
+  pointer-events: none;
+}
+.trust::before {
+  left: 0;
+  background: linear-gradient(to right, var(--trust-bg), transparent);
+}
+.trust::after {
+  right: 0;
+  background: linear-gradient(to left, var(--trust-bg), transparent);
+}
+
+.trust-track { width: 100%; overflow: hidden; }
+.trust-items-wrap {
+  display: flex; align-items: center;
+  animation: scrollTrack 22s linear infinite;
+  width: max-content;
+}
+.trust-item {
+  display: inline-flex; align-items: center; gap: 10px;
+  flex-shrink: 0; padding: 0 8px;
+}
+.trust-icon {
+  font-size: 1.1rem;
+  filter: drop-shadow(0 0 6px rgba(201,162,39,0.5));
+}
+.trust-text {
+  font-size: 0.8rem; font-weight: 600; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--trust-text);
+  white-space: nowrap;
+}
+.trust-dot {
+  display: inline-block; width: 5px; height: 5px;
+  border-radius: 50%; background: var(--gold); opacity: 0.6;
+  margin-left: 8px; flex-shrink: 0;
+}

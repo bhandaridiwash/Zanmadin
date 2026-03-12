@@ -1,0 +1,41 @@
+.how {
+  padding: 80px 8%;
+  text-align: center;
+}
+
+.how h2 {
+  color: #e91e63;
+  margin-bottom: 40px;
+}
+
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.step-card {
+  width: 220px;
+  padding: 30px;
+  background: #fff5f7;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.step-card:hover {
+  transform: scale(1.05);
+}
+
+.step-number {
+  background: #e91e63;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+  font-weight: bold;
+}
